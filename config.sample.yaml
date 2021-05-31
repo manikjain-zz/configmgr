@@ -1,0 +1,29 @@
+hosts:
+  - "x.x.x.x"
+  - "x.x.x.x"
+auth:
+  password: 'XXXXXXXXXXXX'
+  host_keys_path: '/path/to/known_hosts'
+file:
+  path: "/var/www/html"
+  name: "index.php"
+  content: |
+    <?php
+
+    header("Content-Type: text/plain");
+
+    echo "Hello, World! \n";
+  permissions:
+    user: root
+    group: www-data
+    access: 644
+  state: present
+  # state: absent
+  # restart_service: apache2
+package:
+  name: 
+    - "php"
+    - "libapache2-mod-php"
+  state: present
+  # state: absent
+  restart_service: apache2
