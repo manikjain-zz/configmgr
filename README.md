@@ -36,6 +36,13 @@ Refer to `config.sample.yaml` for directions on how to write a `config.yaml`. `c
 
 A `config.yaml` is validated against `config_schema.py` for required and non-allowed fields. It can have the following fields:
 
+| Key   | Options |
+| -------- | ----------- |
+| hosts: **required** | [list of host IPs] **required** |
+| auth: **required** | password: *password* **required**<br>host_keys_path: *known_hosts_file_path* **required** |
+| file: **optional** | path: *file_path* **required**<br>name: *file_name* **required**<br>content: *file_content* **required**<br>permissions: **required**<br>&nbsp;&nbsp;user: *username*<br>&nbsp;&nbsp;group: *group*<br>&nbsp;&nbsp;access: *access_mode(int)*<br>state: *absent/present* **required**<br>restart_service: *service_name* **optional** |
+| package: **optional** | name: *list of packages* **required**<br>state: *absent/present* **required**<br>restart_service: *service_name* **optional** |
+
 ```
 hosts: # List of hosts
   - "x.x.x.x" # IP address
