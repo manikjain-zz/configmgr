@@ -56,7 +56,7 @@ def main():
             for client in clients:
                 install_packages(client, clients[client], packages, config["package"]["state"])
                 # Check if restarting of a service was requested alongside, and the execute the same
-                if 'restart_service' in config["package"] and config["package"]["state"] != "absent":
+                if 'restart_service' in config["package"]:
                     restart_service(client, clients[client], config["package"]["restart_service"])
 
         # Check if 'file' related operations are requested in the config
@@ -74,7 +74,7 @@ def main():
                 elif config["file"]["state"] == "absent":
                     file(client, clients[client], config["file"]["path"], config["file"]["name"], config["file"]["content"], {}, config["file"]["state"])
                 if 'restart_service' in config["file"]:
-                    restart_service(client, clients[client], config["package"]["restart_service"])
+                    restart_service(client, clients[client], config["file"]["restart_service"])
 
         # Close the SSHclient channels for all hosts
         for client in clients:
