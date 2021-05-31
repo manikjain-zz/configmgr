@@ -8,10 +8,12 @@ Table of Contents
 =================
 * [Architecture](#architecture)
   * [Folder structure](#folder-structure)
-  * [Structure of config.yaml](#structure-of-config.yaml)
+  * [Structure of YAML config](#structure-of-yaml-config)
 * [Prerequisites](#prerequisites)
 * [Install and run the tool](#install-and-run-the-tool)
   * [Sample run of the tool](#sample-run-of-the-tool)
+* [Unit tests](#unit-tests)
+  * [Sample run of unit tests](#sample-run-of-unit-tests)
 
 ## Architecture
 
@@ -27,7 +29,7 @@ Table of Contents
     ├── LICENSE
     └── README.md
 
-### Structure of config.yaml
+### Structure of YAML config
 
 Refer to `config.sample.yaml` for directions on how to write a `config.yaml`. `config.sample.yaml` configures a simple PHP server.
 
@@ -103,3 +105,15 @@ Most of sample scenarios below cover the ways in which the configuration on the 
 - **SCENARIO 5:** Removing everything (mark all states as 'absent'). Also, check for idempotence.
 
 ![Remove all](remove_all.png)
+
+## Unit tests
+
+There are four tests added to `test.py` to check SSH connectivity, package installation, file creation and service restart:
+
+1. Ensure that all dependencies are installed using `pip install -r requirements.txt`. These tests use `pytest` module.
+1. Ensure `test_config.yaml` is configured correctly with a host IP and auth information added.
+1. To execute unit tests, run `py.test test.py` from within the main repository directory.
+
+### Sample run of unit tests
+
+![Tests](test.png)
