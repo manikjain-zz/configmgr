@@ -22,11 +22,12 @@ Table of Contents
     .
     ├── configmgr.py                   # Main file to execute the app from
     ├── configmgr_methods.py           # Stores the methods used for SSHclient, file and package operations
-    ├── config.yaml                    # Configuration from this file is used to determine the kind of file and package operations to run on the servers
+    ├── config.yaml (gitingore'd)      # Configuration from this file is used to determine the kind of file and package operations to run on the servers
     ├── config.sample.yaml             # Sample configuration file to setup a simple PHP web server
     ├── config_schema.py               # Schema file used for validating config.yaml for required and non-allowed fields.
-    ├── tools                          # 
-    ├── LICENSE
+    ├── requirements.txt               # Contains pip dependencies
+    ├── test.py                        # Used by pytest to run tests
+    ├── test_config.yaml               # Test config for use by test.py
     └── README.md
 
 ### Structure of YAML config
