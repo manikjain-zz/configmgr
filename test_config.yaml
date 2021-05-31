@@ -1,0 +1,24 @@
+hosts:
+  - "INSERT IP ADDRESS"
+auth:
+  password: 'INSERT PASSWORD'
+  host_keys_path: 'INSERT PATH TO KNOWN HOSTS FILE'
+file:
+  path: "/root"
+  name: "test.txt"
+  content: |
+    asdf asdf 1
+    asdf asdf 2
+    asdf asdf 3
+  permissions:
+    user: root
+    group: root
+    access: 755
+  state: present
+  # restart_service: apache2
+package:
+  name: 
+    - "rolldice"
+  # state: absent
+  state: present
+  restart_service: cron

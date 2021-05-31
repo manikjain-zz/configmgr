@@ -2,3 +2,4 @@ paramiko
 pyyaml
 rich
 cerberus
+pytest==2.9.1
